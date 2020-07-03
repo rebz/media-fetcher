@@ -1,0 +1,18 @@
+%hide {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.Hide {
+    @extend %hide;
+}
+
+.HideMobile {
+
+    @include between-breakpoints(0, $tablet-landscape) {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}

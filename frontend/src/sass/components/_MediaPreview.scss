@@ -1,0 +1,11 @@
+.MediaPreview {
+    max-width: 520px;
+
+    &__bg {
+        background-size: contain;
+    }
+
+    &__poster {
+        max-height: 256px;
+    }
+}

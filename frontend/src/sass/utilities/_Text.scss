@@ -1,0 +1,22 @@
+.text {
+
+    &-xs {
+        @include font-size($text-xs);
+    }
+
+    &-sm {
+        @include font-size($text-sm);
+    }
+
+    &-base {
+        @include font-size($text-base);
+    }
+
+    &-lg {
+        @include font-size($text-lg);
+    }
+
+    &-xl {
+        @include font-size($text-xl);
+    }
+}

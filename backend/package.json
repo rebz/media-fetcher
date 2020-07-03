@@ -1,0 +1,25 @@
+{
+  "name": "media-fetcher-api",
+  "version": "0.0.1",
+  "description": "A node application for fetching media files to be added to Plex",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm -r dotenv/config server.js",
+    "docker:run": "docker run -p 2867:2867 -d esreborn/media-fetcher-api",
+    "docker:build": "docker run -p 2867:2867 -d esreborn/media-fetcher-api"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  },
+  "keywords": [],
+  "author": "Chris Johnson <chris@rebzmedia.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}

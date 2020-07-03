@@ -1,0 +1,42 @@
+.animate-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    // color: $danger-color;
+    // margin-top: 20px;
+    // padding: 14px 20px 12px;
+    // border: $danger-color solid 1px;
+    // border-radius: $size-1;
+}
+ 
+ @include keyframes(shake) {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+ 
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+ 
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+ 
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+ }
+ 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 150ms $animate__cubic-bezier;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}

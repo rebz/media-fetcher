@@ -1,0 +1,91 @@
+@import "../settings/breakpoints";
+
+@function calculatePixels($size) {
+    $remSize: $size / 1rem;
+    @return $remSize * 16px
+}
+
+@mixin font-size($size, $important: false) {
+    @if $important == true {
+        font-size: calculatePixels($size) !important; // fallback for browsers that do not support rem sizing
+        font-size: $size !important;
+    }
+    
+    @if $important == false {
+        font-size: calculatePixels($size); // fallback for browsers that do not support rem sizing
+        font-size: $size;
+    }
+}
+
+@mixin focus() {
+    outline: $color-primary-500;
+    outline-width: 2px;
+    outline-style: dashed;
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}
+}
+
+/** Usage:
+ *  @include breakpoint(tablet) {}
+ *  @include breakpoint(min-width, 1182px) {}
+ *  @include between-breakpoints(0, 1020px) {}
+ */
+
+@mixin breakpoint($point, $value: 0) {
+    @if $point == phone {
+        @media (min-width: $phone) { @content; }
+    }
+
+    @else if $point == phone-landscape {
+        @media (min-width: $phone-landscape) { @content; }
+    }
+
+    @else if $point == tablet {
+        @media (min-width: $tablet) { @content; }
+    }
+
+    @else if $point == tablet-landscape {
+        @media (min-width: $tablet-landscape) { @content; }
+    }
+
+    @else if $point == desktop {
+        @media (min-width: $desktop) { @content; }
+    }
+
+    @else if $point == desktop-hd {
+        @media (min-width: $desktop-hd) { @content; }
+    }
+
+    @else {
+        @media ($point: $value) { @content; }
+    }
+}
+
+@mixin between-breakpoints($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

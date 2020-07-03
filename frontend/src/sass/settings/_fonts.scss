@@ -1,0 +1,29 @@
+$font-color: $color-grey-800;
+$font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+$font-style: normal;
+$font-weight: 400;
+
+// Font Weights
+$font-thin:         200;
+$font-light:        300;
+$font-normal:       400;
+$font-semibold:     500;
+$font-bold:         600;
+$font-extrabold:    700;
+$font-black:        800;
+
+// Font Sizes
+$text-2xs:	        0.625rem;    // 10
+$text-xs:	        0.75rem;    // 12
+$text-sm:	        0.875rem;   // 14
+$text-base:	        1rem;       // 16
+$text-lg:	        1.0625rem;  // 17
+$text-xl:	        1.125rem;   // 18
+$text-2xl:	        1.25rem;    // 20
+$text-3xl:	        1.4375rem;  // 23
+$text-4xl:	        1.625rem;   // 26
+$text-5xl:	        2rem;       // 32
+$text-6xl:	        2.5rem;     // 40
+
+// Custom Font Variables
+$fa:                '.svg-inline--fa';  // Font Awesome SVG Selector

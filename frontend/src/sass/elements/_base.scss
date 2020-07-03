@@ -1,0 +1,56 @@
+html {
+    font-size: 100%; // https://snook.ca/archives/html_and_css/font-size-with-rem
+    min-height: 100%;
+
+    @include html();
+}
+
+body {
+    min-height: 100%;
+    line-height: 1;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    @include body();
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: $font-color;
+    font-style: $font-style;
+    font-family: $font-family;
+    @include font-size($text-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: $size-8;
+}
+
+.h1 {
+    @include font-size($text-4xl);
+}
+
+.h2 {
+    @include font-size($text-3xl);
+}
+
+.h3 {
+    @include font-size($text-2xl);
+}
+
+p {
+    line-height: 130%;
+    padding: $size-1 0;
+    margin-bottom: $size-2;
+}
+
+hr {
+    border: none;
+    border-top: $color-grey-400 solid 1px;
+    margin: $size-8 0;
+}

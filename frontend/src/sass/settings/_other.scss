@@ -1,0 +1,61 @@
+/*
+ *  User Select / Text Highlight
+ */
+$highlight-selection: #000;
+$highlight-font-color: #fff;
+
+
+/*
+ *  Styling for HTML and Body elements
+ */
+@mixin html() {
+    background-color: $color-white;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+@mixin body() {
+    background-color: $color-white;
+    height: 100%;
+}
+
+
+$size-0:	0;	        // 0px
+$size-px:	1px;	    // 1px
+$size-2px:	2px;	    // 1px
+$size-1:	0.25rem;	// 4px
+$size-2:	0.5rem;	    // 8px
+$size-3:	0.75rem;	// 12px
+$size-4:	1rem;	    // 16px
+$size-5:	1.25rem;	// 20px
+$size-6:	1.5rem;	    // 24px
+$size-8:	2rem;	    // 32px
+$size-10:	2.5rem;	    // 40px
+$size-12:	3rem;	    // 48px
+$size-16:	4rem;	    // 64px
+$size-20:	5rem;	    // 80px
+$size-24:	6rem;	    // 96px
+$size-28:	7rem;	    // 112px - added
+$size-32:	8rem;	    // 128px
+$size-40:	10rem;	    // 160px
+$size-48:	12rem;	    // 192px
+$size-56:	14rem;	    // 224px
+$size-64:	16rem;	    // 256px
+$size-80:   20rem;      // 320px - added
+$size-120:  30rem;      // 480px - added
+$size-170:  42.5rem;    // 680px - added
+$size-256:  64rem;      // - added
+$size-300:  75rem;      // 1200px - added
+
+$shadow-top:        0px 15px 30px 5px rgba(0, 0, 0, 0.15), 0px 25px 20px 15px rgba(0, 0, 0, 0.25); //0px 15px 40px -15px rgba(0, 0, 0, 0.25), 0px 25px 60px -35px rgba(0,0,0,0.5);
+$shadow:	        0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md:     	0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:     	0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:     	0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl:        0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner:      inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+$shadow-inner-white: inset 0 0 0 2px rgba(255, 255, 255, 1);
+$shadow-outline:    0 0 0 1px rgba($color-grey-900, 0.1);
+$shadow-none:       none;
+$shadow-inset:      0px 5px 10px -5px rgba(0, 0, 0, 0.35), 
+                    0px 15px 20px -7px rgba(0, 0, 0, 0.25);
