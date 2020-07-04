@@ -30,6 +30,18 @@ const Media = {
             throw error
         }
     },
+    details: async (id, type) => {
+        if (!id || !type) throw '`id` and `type` arguments must be defined when fetching media details'
+        
+        try {
+            const method = type === 'movie' ? 'getMovie' : 'getTv'
+            const response = await TMDB[method](id)
+            return response
+    
+        } catch (error) {
+            throw error
+        }
+    },
     parse: parseMedia
 }
 
