@@ -2,7 +2,7 @@
     <div class="media-list">
         <template v-if="list.length">
             <media-preview
-				:horizontal="false"
+				:horizontal="!!hasSelectedMedia.id"
 				:highlight="hasSelectedMedia.id === media.id"
                 @click.native="selectMedia(media.id, media.type)"
                 class="item"

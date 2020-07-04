@@ -22,14 +22,16 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       height: {
-        'poster-lg': '26rem',
-        'poster-md': '22rem',
-        'poster-sm': '20rem',
+        'poster-xl': '26rem',
+        'poster-lg': '22rem',
+        'poster-md': '20rem',
+        'poster-sm': '7rem',
       },
       width: {
-        'poster-lg': '18rem',
-        'poster-md': '16rem',
-        'poster-sm': '14rem',
+        'poster-xl': '18rem',
+        'poster-lg': '16rem',
+        'poster-md': '14rem',
+        'poster-sm': '5rem',
         '96': '24rem'
       },
     },

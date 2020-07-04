@@ -10,6 +10,7 @@ Search for movies and shows and download
 * Tailwind - Utility-based CSS
 * Vue 3 - Composition API
 * Docker - Nodejs app deployment onto Synology NAS
+* WebSockets - inform UI of recent updates with requested info
 
 ## Resources
 * https://auth0.com/blog/use-docker-to-create-a-node-development-environment/

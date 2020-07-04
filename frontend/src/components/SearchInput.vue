@@ -20,8 +20,10 @@ export default {
     setup() {
         const { searchState, setSearchValue } = useSearchStore();
         const searchValue = ref('');
-        setSearchValue('alien')
         const updateSearch = e => setSearchValue(e.target.value);
+        
+        // TODO :: remove
+        setSearchValue('alien')
 
         return {
             searchValue,
