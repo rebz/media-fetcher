@@ -1,33 +1,24 @@
 'use strict';
+
 const express = require('express');
 const cors = require('cors');
-
-import { Media } from './models/media'
 
 // Constants
 const PORT = 2867;
 const HOST = '0.0.0.0';
 
-// App
+// Server Setup
 const app = express();
-
 app.use(cors())
+const router = express.Router()
 
-app.get('/', (req, res) => {
-	res.status(200).send('hello');
-});
+// Generate Routes
+// TODO :: loop through files in routes folder and auto-register
+const MediaRoutes = require('./routes/MediaRoutes'); //importing route
+MediaRoutes(router); //register the route
 
-app.get('/api/media/search', (req, res) => {
-	if (!req.query || !req.query.query) res.status(400).send('`query` must be defined');
-	Media.search(decodeURI(req.query.query))
-		.then((response) => {
-			res.status(200).send(response);
-		})
-		.catch((err) => {
-			res.status(500).send('An error occurred while attempting to retrieve the results.');
-		})
-});
-
+// Register Router w/ '/api' prefix
+app.use('/api', router)
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);

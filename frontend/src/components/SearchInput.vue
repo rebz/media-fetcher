@@ -4,8 +4,8 @@
             Search Movies and Televsion
         </label>
         <input
-            id="search"
-            class="max-w-full w-96 block px-4 rounded-md text-lg h-12 bg-white shadow hover:shadow-lg"
+            type="text"
+            class="max-w-full w-96 block px-4 rounded-md text-lg h-12 shadow hover:shadow-lg appearance-none"
             @input="updateSearch"
             placeholder="Aliens, Rick and Morty, Gilmore Girls"
             v-model="searchValue"
@@ -19,12 +19,9 @@ import { ref } from "vue";
 export default {
     setup() {
         const { searchState, setSearchValue } = useSearchStore();
-
-        const searchValue = ref("");
-
-        const updateSearch = e => {
-            setSearchValue(e.target.value);
-        };
+        const searchValue = ref('');
+        setSearchValue('rick and morty')
+        const updateSearch = e => setSearchValue(e.target.value);
 
         return {
             searchValue,

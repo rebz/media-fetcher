@@ -4,7 +4,7 @@
   "description": "A node application for fetching media files to be added to Plex",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm -r dotenv/config server.js",
+    "start": "nodemon -r esm -r dotenv/config server.js",
     "docker:run": "docker run -p 2867:2867 -d esreborn/media-fetcher-api",
     "docker:build": "docker run -p 2867:2867 -d esreborn/media-fetcher-api"
   },

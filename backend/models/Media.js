@@ -11,6 +11,7 @@ const parseMedia = (media) => {
         backdrop: media.backdrop_path ? `${TMDB_IMAGES_ENDPOINT}original${media.backdrop_path}` : null,
         date: isMovie ? media.release_date : media.first_air_date,
         overview: media.overview,
+        type: media.media_type
     })
 }
 
