@@ -2,6 +2,8 @@
     <div class="media-list">
         <template v-if="list.length">
             <media-preview
+				:horizontal="false"
+				:highlight="hasSelectedMedia.id === media.id"
                 @click.native="selectMedia(media.id, media.type)"
                 class="item"
                 :media="media"
@@ -13,8 +15,8 @@
 </template>
 
 <script>
-import { useSearchStore } from "/@/store/consumer";
 import { computed, watch, onMounted } from "vue";
+import { useSearchStore } from "/@/store/consumer";
 import MediaPreview from "/@/components/MediaPreview.vue";
 
 export default {
@@ -22,7 +24,7 @@ export default {
         MediaPreview
     },
     setup() {
-        const { searchState, selectMedia } = useSearchStore();
+        const { searchState, selectMedia, hasSelectedMedia } = useSearchStore();
 
 		// list container element
 		let mediaList = undefined
@@ -86,6 +88,7 @@ export default {
         return {
             list,
 			selectMedia,
+			hasSelectedMedia
         };
     }
 };

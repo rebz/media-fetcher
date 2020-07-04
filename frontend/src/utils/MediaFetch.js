@@ -23,6 +23,21 @@ const MediaFetch = {
             throw error
         }
     },
+
+    details: async (id, type) => {
+        if (!id || !type) throw 'Missing `id` or `type` parameter on getMediaDetails'
+        try {
+            const response = await http.get('media/details', {
+                params: {
+                    id,
+                    type
+                }
+            })
+            return response.data
+        } catch (error) {
+            throw error
+        }
+    },
 }
 
 export { 

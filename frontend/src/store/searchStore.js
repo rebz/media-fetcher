@@ -39,6 +39,9 @@ watch(() => searchState.searchValue, (newVal, oldVal) => {
     if (newVal !== oldVal) getSearchResults(newVal)
 })
 
+// watch(() => searchState., (newVal, oldVal) => {
+// })
+
 const setSearchValue = debounce(function(searchValue = '') {
     searchState.searchValue = searchValue
 }, 500)
@@ -46,15 +49,30 @@ const setSearchValue = debounce(function(searchValue = '') {
 const selectMedia = (mediaId, type) => {
     searchState.selectedMedia.id = mediaId
     searchState.selectedMedia.type = type
-    return 
 }
 
-const hasSelected = computed(() => {
-    return searchState.selected
+const hasSelectedMedia = computed(() => {
+    return searchState.selectedMedia
 })
+
+const getMediaDetails = async (id, type) => {
+    try {
+        const response = await MediaFetch.details(id, type)
+        console.info(response)
+
+    } catch (error) {
+        throw error
+    }
+}
+
+watch(searchState.selectedMedia, (newVal, oldVal) => {
+    if (newVal.id) getMediaDetails(newVal.id, newVal.type)
+})
+
 
 export default {
     searchState,
     selectMedia,
     setSearchValue,
+    hasSelectedMedia
 }
