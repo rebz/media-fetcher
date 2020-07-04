@@ -14,9 +14,9 @@ const MediaFetch = {
         if (!query) throw '`query` not defined'
         try {
             const response = await http.get('media/search', { 
-                params: { 
-                    query: encodeURI(query) 
-                } 
+                params: {
+                    query: encodeURI(query)
+                }
             })
             return response.data
         } catch (error) {
@@ -24,15 +24,10 @@ const MediaFetch = {
         }
     },
 
-    details: async (id, type) => {
+    get: async (id, type) => {
         if (!id || !type) throw 'Missing `id` or `type` parameter on getMediaDetails'
         try {
-            const response = await http.get('media/details', {
-                params: {
-                    id,
-                    type
-                }
-            })
+            const response = await http.get(`media/${type}/${id}`)
             return response.data
         } catch (error) {
             throw error

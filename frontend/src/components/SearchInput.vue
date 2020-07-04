@@ -5,9 +5,15 @@
         </label>
         <input
             type="text"
-            class="max-w-full w-96 block px-4 rounded-md text-lg h-12 shadow hover:shadow-lg appearance-none"
+            class="
+                bg-white
+                max-w-full w-96 block px-4 
+                rounded-md text-lg h-12 
+                shadow hover:shadow-lg 
+                appearance-none
+            "
             @input="updateSearch"
-            placeholder="Aliens, Rick and Morty, Gilmore Girls"
+            placeholder="Alien, Rick and Morty, Gilmore Girls"
             v-model="searchValue"
         />
     </div>

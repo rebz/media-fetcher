@@ -14,8 +14,9 @@ exports.search = (req, res) => {
 }
 
 exports.details = (req, res) => {
-	if (!req.query || !req.query.id || !req.query.type) res.status(400).send('`id` and `type` must be defined');
-	const { id, type } = req.query
+	const hasParams = req.params && req.params.id && req.params.type
+	if (!hasParams) res.status(400).send('One or more route parameters are missing; `type` and/or `id`');
+	const { id, type } = req.params
 	Media.details(id, type)
 		.then((response) => {
 			res.status(200).send(response);
@@ -23,4 +24,5 @@ exports.details = (req, res) => {
 		.catch((err) => {
 			res.status(500).send('An error occurred while attempting to retrieve the results.');
 		})
+
 }

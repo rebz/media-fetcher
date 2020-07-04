@@ -10,24 +10,24 @@ const initRoutes = require('./routes/index');
 const PORT = 2867;
 const HOST = '0.0.0.0';
 
-// Server Setup
+// App Setup
 const app = express();
 app.use(cors())
 const router = express.Router()
 
-// Generate Routes
-// TODO :: loop through files in routes folder and auto-register
+// Initialize Routes
 initRoutes(router)
 
-// Register Router w/ '/api' prefix
+// Register Router with an '/api' prefix
 app.use('/api', router)
 
-// initialize http server
+// Initialize http server
 const server = http.createServer(app)
 
-// initialize WebSocket server instance
+// Initialize WebSocket server instance
 const wss = new WebSocket.Server({ server });
 
+// TODO :: remove ws connection details and handling from this file
 wss.on('connection', (ws) => {
 
     // connection is up, add a test event

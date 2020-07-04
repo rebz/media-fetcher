@@ -1,1 +1,2 @@
-export const StoreSymbol = Symbol()
+export const SearchSymbol = Symbol()
+export const MediaSymbol = Symbol()
