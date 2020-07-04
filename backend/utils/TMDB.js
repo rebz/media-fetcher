@@ -37,16 +37,17 @@ const TMDB = {
         if (!id) throw '`ids` not defined for getMovie(id)'
         try {
             const response = await http.get(`movie/${id}`)
-            return response.data
+                return response.data
         } catch (error) {
             throw error
         }
     },
 
     getTv: async (id) => {
+        if (!id) throw '`ids` not defined for getMovie(id)'
         try {
             const response = await http.get(`tv/${id}`)
-            return response.data
+                return response.data
         } catch (error) {
             throw error
         }

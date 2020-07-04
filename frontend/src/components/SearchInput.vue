@@ -20,7 +20,7 @@ export default {
     setup() {
         const { searchState, setSearchValue } = useSearchStore();
         const searchValue = ref('');
-        setSearchValue('rick and morty')
+        setSearchValue('alien')
         const updateSearch = e => setSearchValue(e.target.value);
 
         return {
