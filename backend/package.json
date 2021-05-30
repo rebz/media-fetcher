@@ -16,7 +16,7 @@
     "http": "0.0.1-security",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
-    "ws": "^7.3.0"
+    "ws": "^7.4.6"
   },
   "keywords": [],
   "author": "Chris Johnson <chris@rebzmedia.com>",
